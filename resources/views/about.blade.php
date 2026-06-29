@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ยินดีต้อนรับเข้าสู่เว็บไซต์</title>
+    <title>เกี่ยวกับฉัน</title>
 </head>
 <body>
-    <h2>ยินดีต้อนรับเข้าสู่เว็บไซต์ของฉัน</h2>
+    <h2>บทความทั้งหมด</h2>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas a optio nisi, esse deleniti quis quisquam error quod, quasi temporibus quibusdam qui autem, illum totam officia reiciendis nostrum iste possimus?</p>
-    <a href="/about">About</a>
-    <br><a href="/blog">Blog</a>
-    <br><a href="/student/68152310051-5">Student</a>
+    <a href="/">หน้าแรก</a>
 </body>
 </html>
