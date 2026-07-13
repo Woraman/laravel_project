@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 
 Route::get('/', function () {
     return view("index");
@@ -14,37 +15,6 @@ Route::get('/blog', function () {
     return view("blog");
 });
 
-Route::get('/student/{id}', function ($id) {
-    return view('student', ['id' => $id]);
-})->name('student.profile');
-
-Route::fallback(function () {
-    return 'ไม่พบหน้าเว็บ';
-});
-
-Route::get('/abouts', function () {
-    $name = "Woraman Sureram";
-    $date = "6 กรกฎาคม 2569";
-    return view("abouts", compact('name','date'));
-})->name('abouts');
-
-Route::get('/blogs', function () {
-    $blogs = [
-        [
-            'title' => 'บทความที่ 1',
-            'content' => "เนื้อหาบทความที่ 1",
-            'status' => true
-        ],
-        [
-            'title' => 'บทความที่ 2',
-            'content' => "เนื้อหาบทความที่ 2",
-            'status' => true
-        ],
-        [
-            'title' => "บทความที่ 3",
-            'content' => "เนื้อหาบทความที่ 3",
-            'status' => false
-        ],
-    ];
-    return view("blogs", compact('blogs'));
-})->name('blogs');
+Route::get('/abouts',[AdminController::class,'abouts'])->name('abouts');
+Route::get('/blogs',[AdminController::class,'blogs'])->name('blogs');
+Route::get('/cerate',[AdminController::class,'cerate'])->name('cerate');

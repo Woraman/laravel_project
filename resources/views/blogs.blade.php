@@ -1,20 +1,31 @@
 @extends('layout')
 
-@section('title','บทความ')
+@section('title', 'บทความ')
 
 @section('content')
-<h2>บทความทั้งหมด</h2>
-    <hr>
-    @forelse ($blogs as $item)
-        <h2>{{$item['title']}}</h2>
-        <p>{{$item['content']}}</p>
-        @if ($item['status'])
-            <p class="text-success">สถานะ: เผยแพร่</p>
-        @else
-            <p class="text-danger">สถานะ: ไม่เผยแพร่</p>
-        @endif
-        <hr>
-    @empty
-        <p>ไม่พบข้อมูล</p>
-    @endforelse
+    <h2 class="text text-center py-2">บทความทั้งหมด</h2>
+    <table class="table table-bordered text-center">
+        <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Content</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($blogs as $item)
+                <tr>
+                    <td>{{ $item['title'] }}</td>
+                    <td>{{ $item['content'] }}</td>
+                    <td>
+                        @if ($item['status'])
+                            <span class="btn btn-success">เผยแพร่</span>
+                        @else
+                            <span class="btn btn-danger">ไม่เผยแพร่</span>
+                        @endif
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 @endsection
