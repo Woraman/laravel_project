@@ -20,7 +20,7 @@ class BlogFactory extends Factory
         return [
             'title' => $this->faker->sentence,
             'content' => $this->faker->text(),
-            'status' => $this->faker->boolean(),
+            'status' => rand(0,1),
         ];
     }
 }
